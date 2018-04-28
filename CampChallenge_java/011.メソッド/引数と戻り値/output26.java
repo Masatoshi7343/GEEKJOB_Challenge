@@ -70,7 +70,7 @@ public class output26 extends HttpServlet {
             String[][] IDnum ={ID0,ID1,ID2 };
                     
              
-          for (int i =0; i <limit; i++ ){ //[i]:各ID0～ID2が入っている大箱[j]:ID0～ID2のなかに入れてある中身//
+          for (int i =0; i <limit; i++ ){ //[i]:各ID0～ID2が入っている大箱[j]:ID0～ID2のなかに入れてある中身
               for(int j=0;j<3;j++){
                   if(IDnum[i][j]==null){
                       continue;
