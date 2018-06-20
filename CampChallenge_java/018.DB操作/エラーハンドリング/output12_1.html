@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+未提出
+以下のファイルを作成して，フォームで送信した値をもとにレコードの検索を行います。 
+
+■ HTML ファイル 
+大単元「データベース基礎」の課題「テーブルの作成とinsert」で作成したテーブルの名前・年齢・誕生日情報を送信するフォームを記述してください。 
+
+■ JSP or サーブレットファイル（サーブレットとJSPを連携させても構いません） 
+JDBC を利用して，複合検索処理を記述します。AND検索とするか，OR検索とするかは，自由に決めて構いません。
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><form action="output12" method="post">
+                名前
+                <p><input type="text" name="h_name" size="10"></p>              
+                年齢
+                <p><input type="text" name="h_age" size="10"></p>
+                誕生日
+                <p><input type="text" name="h_bday" size="10"></p>                
+                
+                <input type="submit" name="btnSubmit" value="変更">
+            </form></div>
+    </body>
+</html>
