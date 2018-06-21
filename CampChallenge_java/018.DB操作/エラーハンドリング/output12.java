@@ -42,9 +42,14 @@ public class output12 extends HttpServlet {
                    //名前
              String n= request.getParameter("h_name");//nameカラム
              String s_age= request.getParameter("h_age");
-             int age=Integer.parseInt(s_age);//型変換（文字→数値）、ageカラム
+             int age = 0;
+             if (!"".equals(s_age)){
+                 age=Integer.parseInt(s_age);//parseIntは数値に対応していない。
+             }else{age = 0;}
+             //型変換（文字→数値）、ageカラム
              String b= request.getParameter("h_bday");//birthdayカラム
             
+             
     Connection db_con = null;
     PreparedStatement db_st = null;
     ResultSet db_data = null;
@@ -52,11 +57,19 @@ public class output12 extends HttpServlet {
     Class.forName("com.mysql.cj.jdbc.Driver").newInstance();  
     db_con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Challenge_db?characterEncoding=UTF-8&serverTimezone=JST",
             "Masa","masa0119");//URLがjdbc:mysql://localhost:3306/Challenge_db文字化け起こす。
-    db_st=db_con.prepareStatement("SELECT * FROM profiles where name like ? OR age=? OR birthday like ?");
-    db_st.setString(1,"%"+n+"%");
-    db_st.setInt(2,age);
+    db_st=db_con.prepareStatement("SELECT * FROM profiles where age=? or name like ? or birthday like ?");
+    if("".equals(n)){
+        db_st.setString(2,n);
+    }else{
+        db_st.setString(2,"%"+n+"%");
+    }
+    
+    db_st.setInt(1,age);
+    if("".equals(b)){
+        db_st.setString(3,b);
+    }else{
     db_st.setString(3,"%"+b+"%");
-                                           
+    }                               
     db_data = db_st.executeQuery();
     
     while(db_data.next()){
