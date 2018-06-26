@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TOPページ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div> <form action="output13_all" method="post"> 
+                <p><input type="submit" name="ALL" value="商品一覧"></p>
+                </form>
+            <form action="output13_srv" method="get">
+                商品検索
+                <p>商品番号</p>
+                <p><input type="text" name="k_id" size="10"></p>              
+                商品名
+                <p><input type="text" name="k_name" size="10"></p>            
+                
+                <p><input type="submit" name="btnSubmit" value="検索"></p>
+                
+                商品情報について
+                <menu>
+                    <li><a href="http://localhost:8080/DB1/output13_add.html">商品の追加</a></li>
+                    <li><a href="http://localhost:8080/DB1/output13_Delete.html">商品の削除</a></li>
+                </menu>
+                       
+              </form>
+            <form action="http://localhost:8080/DB1/output13_1.html" method="post">
+             <input type="submit" name="btnSubmit" value="ログアウト">       
+            </form> 
+        </div>
+    </body>
+</html>

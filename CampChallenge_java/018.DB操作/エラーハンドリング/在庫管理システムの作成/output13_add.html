@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>商品の追加</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="output13_add" method="post">
+                商品追加
+                <p>商品名</p>
+                <p><input type="text" name="A_name" size="10"></p>
+                単価
+                <p><input type="text" name="A_pr" size="10"></p>
+                種別
+                <p><input type="radio" name="type" value="1">食品類</p>
+                <p><input type="radio" name="type" value="2">調味料類</p>
+                <p><input type="radio" name="type" value="3">飲料類</p>
+               
+                <input type="submit" name="AddSubmit" value="追加">
+            </form>
+         
+            <form action="http://localhost:8080/DB1/output13_menu.html" method="post">
+                <input type="submit" name="RSubmit" value="戻る">       
+             </form>
+            <form action="http://localhost:8080/DB1/output13_1.html" method="post">
+                <input type="submit" name="outSubmit" value="ログアウト">       
+            </form>   
+        </div>
+    </body>
+</html>
